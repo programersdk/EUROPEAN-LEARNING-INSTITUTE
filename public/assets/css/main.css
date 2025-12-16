@@ -1,0 +1,106 @@
+/* Main CSS - European Learning Institute */
+/* Modern 2025 Aesthetic - Clean, Minimal, Soft Gradients */
+
+:root {
+    /* Color Palette */
+    --bg-body: #ffffff;
+    --bg-surface: #f8f9fa;
+    --bg-surface-hover: #f1f3f5;
+    
+    --text-primary: #1a1a1a;
+    --text-secondary: #6c757d;
+    --text-muted: #adb5bd;
+
+    --brand-primary: #007bff; /* Replace with specific brand color if needed */
+    --brand-gradient: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    
+    --border-color: #e9ecef;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+    
+    --transition-base: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-base);
+}
+
+/* Utilities */
+.rounded-xl { border-radius: var(--border-radius-md) !important; }
+.rounded-2xl { border-radius: var(--border-radius-lg) !important; }
+
+.shadow-soft { box-shadow: var(--shadow-sm); }
+.shadow-hover { transition: var(--transition-base); }
+.shadow-hover:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.text-gradient {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-modern {
+    background: var(--text-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    border: none;
+    transition: var(--transition-base);
+}
+
+.btn-modern:hover {
+    background: #000;
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.card-modern {
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    transition: var(--transition-base);
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-secondary) !important;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-primary) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 6rem 0;
+    background: radial-gradient(circle at top right, #f8f9fa 0%, #ffffff 50%);
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card - European Learning Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Minimal print tweaks retained */
+        @media print {
+            body { -webkit-print-color-adjust: exact; }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="max-w-4xl mx-auto p-6">
+        <div class="bg-white rounded-2xl p-8 shadow-lg mb-8 no-print">
+            <h2 class="text-2xl font-bold text-sky-800 mb-6 text-center">Student ID Card Generator</h2>
+
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-semibold text-sky-800" for="studentName">
+                    <i class="fas fa-user mr-2"></i>Full Name
+                </label>
+                <div class="relative pb-1">
+                    <input type="text" 
+                           class="peer block w-full border-b-2 border-gray-200 focus:border-sky-600 py-3 text-lg placeholder-gray-400 bg-transparent outline-none" 
+                           id="studentName" 
+                           placeholder="Enter your full name"
+                           value="John Doe">
+                    <span class="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-400"><i class="fas fa-edit"></i></span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-semibold text-sky-800" for="studentCourse">
+                    <i class="fas fa-graduation-cap mr-2"></i>Course
+                </label>
+                <div class="relative pb-1">
+                    <input type="text" 
+                           class="peer block w-full border-b-2 border-gray-200 focus:border-sky-600 py-3 text-lg placeholder-gray-400 bg-transparent outline-none" 
+                           id="studentCourse" 
+                           placeholder="Enter your course/program"
+                           value="Web Development">
+                    <span class="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-400"><i class="fas fa-book"></i></span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-semibold text-sky-800" for="studentID">
+                    <i class="fas fa-id-card mr-2"></i>Student ID
+                </label>
+                <div class="relative pb-1">
+                    <input type="text" 
+                           class="peer block w-full border-b-2 border-gray-200 focus:border-sky-600 py-3 text-lg placeholder-gray-400 bg-transparent outline-none" 
+                           id="studentID" 
+                           placeholder="Enter your student ID"
+                           value="ELI-25-001">
+                    <span class="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-400"><i class="fas fa-hashtag"></i></span>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-semibold text-sky-800" for="studentPhoto">
+                    <i class="fas fa-camera mr-2"></i>Photo URL
+                </label>
+                <div class="relative pb-1">
+                    <input type="text" 
+                           class="peer block w-full border-b-2 border-gray-200 focus:border-sky-600 py-3 text-lg placeholder-gray-400 bg-transparent outline-none" 
+                           id="studentPhoto" 
+                           placeholder="Paste image URL for your photo"
+                           value="https://ui-avatars.com/api/?name=John+Doe&background=2a5298&color=fff&size=200">
+                    <span class="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-400"><i class="fas fa-image"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-80 h-52 mx-auto mt-6">
+            <div class="w-full h-full rounded-xl bg-white shadow-xl overflow-hidden relative">
+                <div class="bg-gradient-to-r from-sky-800 to-sky-600 p-3 text-white flex items-center justify-between">
+                    <span class="font-semibold text-sm">EUROPEAN LEARNING INSTITUTE</span>
+                    <span class="bg-white text-sky-800 text-xs px-2 py-1 rounded">STUDENT</span>
+                </div>
+
+                <div class="w-20 h-20 rounded-full border-4 border-white bg-gray-200 absolute left-4 top-14 overflow-hidden shadow" id="idPhoto">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=2a5298&color=fff&size=200" 
+                         class="w-full h-full object-cover"
+                         alt="Student Photo"
+                         id="photoImg">
+                </div>
+
+                <div class="p-4 pt-16 text-right">
+                    <div>
+                        <div class="text-xs uppercase text-gray-400 font-bold">Name</div>
+                        <div class="text-sm font-semibold text-gray-800 mb-1" id="displayName">John Doe</div>
+                    </div>
+                    <div class="mt-1">
+                        <div class="text-xs uppercase text-gray-400 font-bold">Course</div>
+                        <div class="text-sm text-gray-700" id="displayCourse">Web Development</div>
+                    </div>
+                    <div class="mt-1">
+                        <div class="text-xs uppercase text-gray-400 font-bold">Est. ID</div>
+                        <div class="text-sm font-semibold text-gray-800" id="displayID">ELI-25-001</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-6 no-print">
+            <a href="student/dashboard.html" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition">
+                <i class="fas fa-arrow-left mr-2"></i>Skip
+            </a>
+            <button class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-sky-700 text-white hover:bg-sky-800 transition" id="downloadBtn">
+                <i class="fas fa-download mr-2"></i>Download ID
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Real-time ID card update
+        document.getElementById('studentName').addEventListener('input', function() {
+            document.getElementById('displayName').textContent = this.value || 'John Doe';
+            updateAvatar();
+        });
+
+        document.getElementById('studentCourse').addEventListener('input', function() {
+            document.getElementById('displayCourse').textContent = this.value || 'Web Development';
+        });
+
+        document.getElementById('studentID').addEventListener('input', function() {
+            document.getElementById('displayID').textContent = this.value || 'ELI-25-001';
+        });
+
+        document.getElementById('studentPhoto').addEventListener('input', function() {
+            updateAvatar();
+        });
+
+        function updateAvatar() {
+            const photoInput = document.getElementById('studentPhoto').value;
+            const name = document.getElementById('studentName').value || 'John Doe';
+            
+            if (photoInput.trim()) {
+                document.getElementById('photoImg').src = photoInput;
+            } else {
+                // Generate avatar based on name
+                const encodedName = encodeURIComponent(name);
+                document.getElementById('photoImg').src = 
+                    `https://ui-avatars.com/api/?name=${encodedName}&background=2a5298&color=fff&size=200`;
+            }
+        }
+
+        // Download button functionality
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const btn = this;
+            const originalText = btn.innerHTML;
+            
+            // Button click feedback
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('ID card download initiated! In a real application, this would generate a PDF or image file.');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 1500);
+        });
+
+        // Lightweight focus ring for inputs (Tailwind utilities applied via classList)
+        const inputs = document.querySelectorAll('input[id^="student"]');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.classList.add('ring-2', 'ring-sky-200');
+            });
+            input.addEventListener('blur', function() {
+                this.classList.remove('ring-2', 'ring-sky-200');
+            });
+        });
+    </script>
+</body>
+
+</html>

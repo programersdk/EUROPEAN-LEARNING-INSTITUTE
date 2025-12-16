@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - European Learning Institute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--text-primary);
+        }
+
+        .form-control {
+            background-color: var(--bg-surface);
+            border: 1px solid transparent;
+            padding: 0.75rem 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-body">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">ELI</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex">
+                    <a href="../form.html" class="btn btn-sm btn-outline-dark rounded-pill px-4 me-2">Log In</a>
+                    <a href="../form.html" class="btn btn-sm btn-dark rounded-pill px-4">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="py-5 mt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+
+                <!-- Contact Info -->
+                <div class="col-lg-5">
+                    <h1 class="display-5 fw-bold mb-4">Get in Touch</h1>
+                    <p class="text-secondary lead mb-5">Have questions? We'd love to hear from you. Send us a message
+                        and we'll respond as soon as possible.</p>
+
+                    <div class="d-flex mb-4">
+                        <div class="me-3 fs-4">📍</div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Address</h5>
+                            <p class="text-secondary mb-0">123 Education Lane,<br>Knowledge City, EC 56789</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-4">
+                        <div class="me-3 fs-4">📞</div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Phone</h5>
+                            <p class="text-secondary mb-0">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-4">
+                        <div class="me-3 fs-4">✉️</div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Email</h5>
+                            <p class="text-secondary mb-0">info@european-institute.edu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form -->
+                <div class="col-lg-7">
+                    <div class="card-modern shadow-lg border-0 bg-white">
+                        <h3 class="fw-bold mb-4">Online Inquiry</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-secondary">First Name</label>
+                                    <input type="text" class="form-control rounded-3" placeholder="John">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-secondary">Last Name</label>
+                                    <input type="text" class="form-control rounded-3" placeholder="Doe">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold text-secondary">Email Address</label>
+                                    <input type="email" class="form-control rounded-3" placeholder="john@example.com">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold text-secondary">Subject</label>
+                                    <select class="form-select rounded-3 border-0 bg-surface">
+                                        <option>General Inquiry</option>
+                                        <option>Cousre Enrollment</option>
+                                        <option>Partnership</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold text-secondary">Message</label>
+                                    <textarea class="form-control rounded-3" rows="5"
+                                        placeholder="How can we help you?"></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-dark w-100 py-3 rounded-pill fw-bold">Send
+                                        Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 border-top bg-white text-center">
+        <p class="text-secondary small mb-0">&copy; 2025 European Learning Institute.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="assets/js/landingPage.js"></script>
+</body>
+
+</html>

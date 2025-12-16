@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Courses - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../public/assets/css/main.css">
+    <style>
+        .sidebar {
+            width: 280px;
+            background: white;
+            min-height: 100vh;
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 2rem;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 2rem;
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: var(--text-primary);
+        }
+
+        .nav-pills .nav-link {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .nav-pills .nav-link:hover {
+            color: var(--text-primary);
+            background-color: var(--bg-surface);
+        }
+    </style>
+</head>
+
+<body class="bg-surface">
+
+    <!-- Sidebar -->
+    <div class="sidebar d-none d-lg-block">
+        <h4 class="fw-bold mb-5 px-3"> Admin</h4>
+        <div class="nav flex-column nav-pills">
+            <a class="nav-link" href="dashboard.html"> Dashboard</a>
+            <a class="nav-link" href="students.html"> Students</a>
+            <a class="nav-link active" href="courses.html"> Courses</a>
+            <a class="nav-link" href="announcements.html"> Announcements</a>
+            <a class="nav-link mt-5 text-danger" href="index.html"> Logout</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold">Courses</h2>
+                <p class="text-secondary small">Add, edit, or remove courses</p>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-dark rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#addCourseModal">+
+                    Add New Course</button>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Course Card 1 -->
+            <div class="col-md-4">
+                <div class="card-modern bg-white border-0 shadow-sm p-0 overflow-hidden h-100">
+                    <div class="bg-light ratio ratio-16x9">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80"
+                            class="object-fit-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="fw-bold mb-0">English Language</h5>
+                            <button class="btn btn-sm btn-light rounded-circle shadow-sm">⋮</button>
+                        </div>
+                        <p class="text-secondary small">Intermediate Level</p>
+                        <div class="d-flex gap-2 mt-3">
+                            <button class="btn btn-sm btn-outline-dark rounded-pill flex-grow-1">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger rounded-pill">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="col-md-4">
+                <div class="card-modern bg-white border-0 shadow-sm p-0 overflow-hidden h-100">
+                    <div class="bg-light ratio ratio-16x9">
+                        <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=600&q=80"
+                            class="object-fit-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="fw-bold mb-0">Web Development</h5>
+                            <button class="btn btn-sm btn-light rounded-circle shadow-sm">⋮</button>
+                        </div>
+                        <p class="text-secondary small">Full Stack Bootcamp</p>
+                        <div class="d-flex gap-2 mt-3">
+                            <button class="btn btn-sm btn-outline-dark rounded-pill flex-grow-1">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger rounded-pill">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Add Course Modal -->
+    <div class="modal fade" id="addCourseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-xl">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">Add New Course</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-secondary">Course Title</label>
+                            <input type="text" class="form-control rounded-3" placeholder="e.g. Advanced Excel">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-secondary">Category</label>
+                            <select class="form-select rounded-3">
+                                <option>Computer Courses</option>
+                                <option>English Language</option>
+                                <option>Coaching</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-secondary">Price</label>
+                            <input type="number" class="form-control rounded-3" placeholder="0.00">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold text-secondary">Description</label>
+                            <textarea class="form-control rounded-3" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100 rounded-pill py-2 fw-bold">Create
+                            Course</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

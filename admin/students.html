@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Students - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../public/assets/css/main.css">
+    <style>
+        .sidebar {
+            width: 280px;
+            background: white;
+            min-height: 100vh;
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 2rem;
+        }
+
+        .main-content {
+            margin-left: 280px;
+            padding: 2rem;
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: var(--text-primary);
+        }
+
+        .nav-pills .nav-link {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .nav-pills .nav-link:hover {
+            color: var(--text-primary);
+            background-color: var(--bg-surface);
+        }
+    </style>
+</head>
+
+<body class="bg-surface">
+
+    <!-- Sidebar -->
+    <div class="sidebar d-none d-lg-block">
+        <h4 class="fw-bold mb-5 px-3"> Admin</h4>
+        <div class="nav flex-column nav-pills">
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+            <a class="nav-link active" href="students.html"> Students</a>
+            <a class="nav-link" href="courses.html"> Courses</a>
+            <a class="nav-link" href="announcements.html"> Announcements</a>
+            <a class="nav-link mt-5 text-danger" href="index.html"> Logout</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold">Students</h2>
+                <p class="text-secondary small">Manage enrolled students and registrations</p>
+            </div>
+            <div class="d-flex gap-2">
+                <input type="text" class="form-control rounded-pill px-3" placeholder="Search students...">
+            </div>
+        </div>
+
+        <div class="card-modern bg-white border-0 shadow-sm overflow-hidden">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="bg-light">
+                        <tr>
+                            <th class="border-0 px-4 py-3 text-secondary small">ID</th>
+                            <th class="border-0 px-4 py-3 text-secondary small">Name</th>
+                            <th class="border-0 px-4 py-3 text-secondary small">Email</th>
+                            <th class="border-0 px-4 py-3 text-secondary small">Course</th>
+                            <th class="border-0 px-4 py-3 text-secondary small">Status</th>
+                            <th class="border-0 px-4 py-3 text-secondary small text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row 1 -->
+                        <tr>
+                            <td class="border-0 px-4 py-3 text-secondary small">#1023</td>
+                            <td class="border-0 px-4 py-3 fw-medium">Alice Johnson</td>
+                            <td class="border-0 px-4 py-3 text-secondary">alice@example.com</td>
+                            <td class="border-0 px-4 py-3 text-secondary">IELTS</td>
+                            <td class="border-0 px-4 py-3"><span
+                                    class="badge bg-warning-subtle text-warning rounded-pill">Pending</span></td>
+                            <td class="border-0 px-4 py-3 text-end">
+                                <button class="btn btn-sm btn-success rounded-circle" title="Approve">✓</button>
+                                <button class="btn btn-sm btn-danger rounded-circle" title="Reject">✕</button>
+                                <button class="btn btn-sm btn-light rounded-circle" title="View Details">👁️</button>
+                            </td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr>
+                            <td class="border-0 px-4 py-3 text-secondary small">#1022</td>
+                            <td class="border-0 px-4 py-3 fw-medium">Mike Smith</td>
+                            <td class="border-0 px-4 py-3 text-secondary">mike@example.com</td>
+                            <td class="border-0 px-4 py-3 text-secondary">Web Dev</td>
+                            <td class="border-0 px-4 py-3"><span
+                                    class="badge bg-success-subtle text-success rounded-pill">Active</span></td>
+                            <td class="border-0 px-4 py-3 text-end">
+                                <button class="btn btn-sm btn-light rounded-circle" title="Edit">✏️</button>
+                                <button class="btn btn-sm btn-light rounded-circle" title="View Details">👁️</button>
+                            </td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr>
+                            <td class="border-0 px-4 py-3 text-secondary small">#1021</td>
+                            <td class="border-0 px-4 py-3 fw-medium">Sarah Connor</td>
+                            <td class="border-0 px-4 py-3 text-secondary">sarah@example.com</td>
+                            <td class="border-0 px-4 py-3 text-secondary">Graphics</td>
+                            <td class="border-0 px-4 py-3"><span
+                                    class="badge bg-danger-subtle text-danger rounded-pill">Rejected</span></td>
+                            <td class="border-0 px-4 py-3 text-end">
+                                <button class="btn btn-sm btn-light rounded-circle" title="View Details">👁️</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+            <div class="p-3 border-top d-flex justify-content-end">
+                <nav>
+                    <ul class="pagination pagination-sm mb-0">
+                        <li class="page-item disabled"><a class="page-link border-0 text-secondary"
+                                href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link border-0 bg-dark" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link border-0 text-secondary" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link border-0 text-secondary" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
